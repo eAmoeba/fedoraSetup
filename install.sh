@@ -13,7 +13,7 @@ sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey;
 sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
 
 ###
-# Update system but not the kernel
+# Update system:
 ###
 sudo dnf update -y
 
@@ -23,7 +23,7 @@ sudo dnf update -y
 # sudo dnf remove -y hexchat pidgin redshift thunderbird transmission xfburn parole
 
 ###
-# Install base packages and applications
+# Install packages and applications
 ###
 sudo dnf install -y atom aspell aspell-en bleachbit blender cowsay ffmpeg gimp git gstreamer-ffmpeg gstreamer-plugins-base gstreamer1-plugins-base gstreamer-plugins-good gstreamer-plugins-good-extras gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer-plugins-ugly gstreamer1-plugins-ugly gstreamer-plugins-bad gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-plugins-bad-free-extras glances hwinfo htop icedtea-web irssi iotop java-openjdk klavaro lutris lm_sensors mediawriter mpv nload nethogs powerline-fonts python3-idle python-pip shutter steam tig tilix units wavemon xfce4-terminal youtube-dl zsh
 
@@ -41,12 +41,32 @@ sudo pip install speedtest-cli
 # Install python language server - pip
 ###
 sudo pip install python-language-server; sudo pip install --upgrade pip
+
+###
+# Notes:
+###
+echo " "
+echo "----------------------------------"
+echo " Set up zsh: "
+echo " change default shell:"
+echo " chsh -s /user/bin/zsh & sudo chsh -s /usr/bin/zsh "
+echo " start zsh for the first time to begin setup"
+echo " press 1, then 1, then 1(set history), 2(where histoy is saved)"
+echo " 3(number of lines to be saved) then press 0, then 2, then 1,"
+echo " to finish the install press 0."
+echo " online guide is needed: https://www.osradar.com/switch-to-zsh-on-linux/"
+echo "----------------------------------"
+echo " "
 echo "----------------------------------"
 echo " Install Dropbox"
 echo " www.dropbox.com"
 echo "----------------------------------"
+echo " "
+echo "----------------------------------"
 echo " glances command:"
-echo " glances -1 -4 -t 3 --process-short-name -3 --hide-kernel-threads"
+echo " glances -1 -4 -t 3 --process-short-name -3 --hide-kernel-threads "
+echo "----------------------------------"
+echo " "
 echo "----------------------------------"
 echo "Install printer"
 echo "https://support.brother.com/g/b/downloadlist.aspx?c=us&lang=en&prod=hll2395dw_us_as&os=127"
